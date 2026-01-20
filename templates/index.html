@@ -143,10 +143,24 @@
             cursor: pointer;
         }
 
-        .file-link:hover {
-            color: #1e40af;
-            text-decoration: none;
+        .footer {
+            margin-top: 40px;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 13px;
         }
+
+        .footer a {
+            color: #64748b;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer a:hover {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+
 
     </style>
     </head>
@@ -188,6 +202,13 @@
     <div id="result-table"></div>
 </div>
 </div>
+<footer class="footer">
+    <a href="https://github.com/omkar3311" target="_blank" rel="noopener noreferrer">
+        Created by omkar3311
+    </a>
+</footer>
+
+
 <script>
     const fileInput = document.getElementById("csv-file");
     const fileName = document.getElementById("file-name");
