@@ -5,6 +5,11 @@
 It is designed to be fast, fair, and easy to use—ideal for academic institutions or internal administrative workflows.
 
 ---
+## 📸 Preview
+
+![MinorFlow UI](minorflow.png)
+
+
 
 ## 🚀 Features
 
