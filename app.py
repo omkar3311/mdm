@@ -29,7 +29,7 @@ if file and button:
             assigned = False
 
             for choice_col in ["Choice1", "Choice2", "Choice3"]:
-                choice = row.get(choice_col)
+                choice = row.get(choice_col).lower()
                 if ( choice in minor_seats[branch] and minor_seats[branch][choice] > 0):
                     data.at[idx, "Minor"] = choice
                     minor_seats[branch][choice] -= 1
