@@ -3,6 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <title>MinorFlow</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 15px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+
+        p.subtitle {
+            color: #475569;
+            margin-top: 0;
+        }
+
+        .upload-box {
+            border: 2px dashed #94a3b8;
+            border-radius: 14px;
+            padding: 25px;
+            text-align: center;
+            background: #f8fafc;
+            transition: all 0.3s ease;
+        }
+
+        .upload-box:hover {
+            border-color: #2563eb;
+            background: #eff6ff;
+        }
+
+        .upload-box label {
+            display: block;
+            font-size: 15px;
+            font-weight: 500;
+            color: #334155;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+
+        .upload-box span {
+            display: block;
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 10px;
+        }
+
+        .upload-box input[type="file"] {
+            display: none;
+        }
+
+        .file-name {
+            font-size: 13px;
+            color: #334155;
+        }
+
+        .form-row {
+            margin-top: 20px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #cbd5f5;
+            font-size: 14px;
+        }
+
+        .btn {
+            margin-top: 20px;
+            background: #2563eb;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #1e40af;
+        }
+
+        #status {
+            margin-top: 12px;
+            font-size: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        table thead {
+            background: #f1f5f9;
+        }
+
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+        }
+
+        table th {
+            color: #1e293b;
+        }
+
+        .hidden {
+            display: none;
+        }
+        .file-link {
+            color: #2563eb;
+            text-decoration: underline;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .file-link:hover {
+            color: #1e40af;
+            text-decoration: none;
+        }
+
+    </style>
     </head>
 <body>
 <div class="container">
