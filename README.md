@@ -43,6 +43,7 @@ project/
 ├── templates/
 │   └── index.html
 └── README.md
+```
 ## 📄 CSV Format (Required)
 
 Your input CSV file **must** contain the following columns.  
