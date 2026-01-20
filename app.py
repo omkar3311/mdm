@@ -6,12 +6,12 @@ file = st.file_uploader("upload file" ,type=["csv"])
 seats = st.number_input("seat limit",value=10)
 button = st.button("Upload")
 
-major = ["aids" , "cs" , "civil" , "mech" ,"e&tc"]
+major = ["aids" , "cs" , "civil" , "mech" ,"entc"]
 minor = {
-    "aids" : ["e&tc" , "civil" , "mech" ],
-    "cs" : ["e&tc","civil" , "mech" ],
-    "civil" : ["aids","cs","e&tc","mech"],
-    "mech" : ["aids","cs","e&tc","civil"]
+    "aids" : ["entc" , "civil" , "mech" ],
+    "cs" : ["entc","civil" , "mech" ],
+    "civil" : ["aids","cs","entc","mech"],
+    "mech" : ["aids","cs","entc","civil"]
 }
 
 if file and button:
