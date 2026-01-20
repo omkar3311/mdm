@@ -188,3 +188,113 @@
     <div id="result-table"></div>
 </div>
 </div>
+<script>
+    const fileInput = document.getElementById("csv-file");
+    const fileName = document.getElementById("file-name");
+    const form = document.getElementById("upload-form");
+    const status = document.getElementById("status");
+    const resultCard = document.getElementById("result-card");
+    const resultTable = document.getElementById("result-table");
+    const downloadBtn = document.getElementById("download-btn");
+
+    let latestData = []; 
+
+    fileInput.addEventListener("change", () => {
+        fileName.textContent = fileInput.files.length
+            ? fileInput.files[0].name
+            : "No file selected";
+    });
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        if (!fileInput.files.length) {
+            status.textContent = "Please upload a CSV file.";
+            status.style.color = "red";
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append("file", fileInput.files[0]);
+        formData.append("seats", document.getElementById("seat-limit").value);
+
+        status.textContent = "Processing...";
+        status.style.color = "#334155";
+
+        try {
+            const response = await fetch("/process", {
+                method: "POST",
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                status.textContent = data.detail || "Error occurred";
+                status.style.color = "red";
+                return;
+            }
+
+            status.textContent = "Allocation completed successfully.";
+            status.style.color = "green";
+
+            latestData = data;          
+            renderTable(data);
+        } catch {
+            status.textContent = "Server error.";
+            status.style.color = "red";
+        }
+    });
+
+    function renderTable(data) {
+        let html = "<table><thead><tr>";
+
+        Object.keys(data[0]).forEach(key => {
+            html += `<th>${key}</th>`;
+        });
+
+        html += "</tr></thead><tbody>";
+
+        data.forEach(row => {
+            html += "<tr>";
+            Object.values(row).forEach(val => {
+                html += `<td>${val ?? ""}</td>`;
+            });
+            html += "</tr>";
+        });
+
+        html += "</tbody></table>";
+
+        resultTable.innerHTML = html;
+        resultCard.classList.remove("hidden");
+        downloadBtn.style.display = "inline-block";
+    }
+
+    downloadBtn.addEventListener("click", () => {
+        if (!latestData.length) return;
+
+        const csv = convertToCSV(latestData);
+        const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+        const url = URL.createObjectURL(blob);
+
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "allocated_minors.csv";
+        link.click();
+
+        URL.revokeObjectURL(url);
+    });
+
+    function convertToCSV(data) {
+        const headers = Object.keys(data[0]).join(",");
+        const rows = data.map(row =>
+            Object.values(row)
+                .map(val => `"${val ?? ""}"`)
+                .join(",")
+        );
+
+        return [headers, ...rows].join("\n");
+    }
+</script>
+</body>
+</html>
