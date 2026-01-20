@@ -9,11 +9,9 @@ templates = Jinja2Templates(directory="templates")
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
+
 @app.post("/process")
-async def process_csv(
-    file: UploadFile = File(...),
-    seats: int = Form(...)
-):
+async def process_csv(file: UploadFile = File(...),seats: int = Form(...)):
     if not file.filename.endswith(".csv"):
         raise HTTPException(status_code=400, detail="Only CSV files allowed")
 
