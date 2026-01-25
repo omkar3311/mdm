@@ -7,7 +7,7 @@ It is designed to be fast, fair, and easy to use—ideal for academic institutio
 ---
 ## 📸 Preview
 
-![MinorFlow UI](minorflow.png)
+![MinorFlow UI](Minorflow.png)
 
 
 
