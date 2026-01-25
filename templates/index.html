@@ -1,180 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>MinorFlow</title>
-        <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
-            margin: 0;
-            padding: 0;
-        }
+<meta charset="UTF-8">
+<title>MinorFlow</title>
 
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 15px;
-        }
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
 
-        .card {
-            background: #ffffff;
-            border-radius: 14px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        }
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 15px;
+}
 
-        h1 {
-            color: #1e293b;
-            margin-bottom: 8px;
-        }
+.title-section {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 60px;
+    text-align: center;
+}
 
-        h2 {
-            color: #1e293b;
-            margin-bottom: 15px;
-        }
+h1 {
+    color: #1e293b;
+    margin-bottom: 8px;
+    font-size: 32px;
+}
 
-        p.subtitle {
-            color: #475569;
-            margin-top: 0;
-        }
+h2 {
+    color: #1e293b;
+    margin-bottom: 15px;
+    text-align: center;
+}
 
-        .upload-box {
-            border: 2px dashed #94a3b8;
-            border-radius: 14px;
-            padding: 25px;
-            text-align: center;
-            background: #f8fafc;
-            transition: all 0.3s ease;
-        }
+p.subtitle {
+    color: #475569;
+    margin-top: 0;
+}
 
-        .upload-box:hover {
-            border-color: #2563eb;
-            background: #eff6ff;
-        }
+.upload-box {
+    border: 2px dashed #94a3b8;
+    border-radius: 14px;
+    padding: 25px;
+    text-align: center;
+    background: #f8fafc;
+    transition: all 0.3s ease;
+    width:500px;
+    height : 100px;
+    margin: 0 auto;
+}
 
-        .upload-box label {
-            display: block;
-            font-size: 15px;
-            font-weight: 500;
-            color: #334155;
-            margin-bottom: 8px;
-            cursor: pointer;
-        }
+.upload-box:hover {
+    border-color: #2563eb;
+    background: #eff6ff;
+}
 
-        .upload-box span {
-            display: block;
-            font-size: 13px;
-            color: #64748b;
-            margin-bottom: 10px;
-        }
+.upload-box label {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: #334155;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
 
-        .upload-box input[type="file"] {
-            display: none;
-        }
+.upload-box span {
+    display: block;
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 10px;
+}
 
-        .file-name {
-            font-size: 13px;
-            color: #334155;
-        }
+.upload-box input[type="file"] {
+    display: none;
+}
 
-        .form-row {
-            margin-top: 20px;
-        }
+.file-name {
+    font-size: 13px;
+    color: #334155;
+}
 
-        input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #cbd5f5;
-            font-size: 14px;
-        }
-
-        .btn {
-            margin-top: 20px;
-            background: #2563eb;
-            color: #ffffff;
-            border: none;
-            border-radius: 8px;
-            padding: 10px 20px;
-            font-size: 14px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background: #1e40af;
-        }
-
-        #status {
-            margin-top: 12px;
-            font-size: 14px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-            font-size: 14px;
-        }
-
-        table thead {
-            background: #f1f5f9;
-        }
-
-        table th, table td {
-            padding: 10px;
-            border: 1px solid #e2e8f0;
-            text-align: left;
-        }
-
-        table th {
-            color: #1e293b;
-        }
-
-        .hidden {
-            display: none;
-        }
-        .file-link {
-            color: #2563eb;
-            text-decoration: underline;
-            font-weight: 500;
-            cursor: pointer;
-        }
-
-        .footer {
-            margin-top: 40px;
-            padding: 15px 0;
-            text-align: center;
-            font-size: 13px;
-        }
-
-        .footer a {
-            color: #64748b;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .footer a:hover {
-            color: #2563eb;
-            text-decoration: underline;
-        }
+.form-row {
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
 
 
-    </style>
-    </head>
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #cbd5f5;
+    font-size: 14px;
+}
+
+.btn {
+    margin-top: 20px;
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+#upload-form .btn {
+    display: block;
+    margin: 20px auto 0 auto; 
+}
+
+.btn:hover {
+    background: #1e40af;
+}
+
+#status {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+table thead {
+    background: #f1f5f9;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+table th {
+    color: #1e293b;
+}
+
+.hidden {
+    display: none;
+}
+
+.file-link {
+    color: #2563eb;
+    text-decoration: underline;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.footer {
+    margin-top: 40px;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 13px;
+}
+
+.footer a {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+.container > .card:nth-of-type(2) {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+</style>
+</head>
+
 <body>
 <div class="container">
 
-    <div class="card">
+    <div class="title-section">
         <h1>MinorFlow</h1>
-        <p class="subtitle">
-            Streamlined Minor Degree Assignment.
-        </p>
+        <p class="subtitle">Streamlined Minor Degree Assignment.</p>
     </div>
 
-    <div class="card">
+    <div >
         <h2>Upload Data</h2>
         <form id="upload-form">
             <div class="upload-box">
@@ -193,129 +209,130 @@
             <p id="status"></p>
         </form>
     </div>
+
     <div class="card hidden" id="result-card">
-    <div style="display:flex;justify-content:space-between;align-items:center;">
-        <h2>Allocated Minors</h2>
-        <button class="btn" id="download-btn">Download CSV</button>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+            <h2>Allocated Minors</h2>
+            <button class="btn" id="download-btn">Download CSV</button>
+        </div>
+        <div id="result-table"></div>
     </div>
 
-    <div id="result-table"></div>
 </div>
-</div>
+
 <footer class="footer">
     <a href="https://github.com/omkar3311" target="_blank" rel="noopener noreferrer">
         Created by omkar3311
     </a>
 </footer>
 
-
 <script>
-    const fileInput = document.getElementById("csv-file");
-    const fileName = document.getElementById("file-name");
-    const form = document.getElementById("upload-form");
-    const status = document.getElementById("status");
-    const resultCard = document.getElementById("result-card");
-    const resultTable = document.getElementById("result-table");
-    const downloadBtn = document.getElementById("download-btn");
+const fileInput = document.getElementById("csv-file");
+const fileName = document.getElementById("file-name");
+const form = document.getElementById("upload-form");
+const status = document.getElementById("status");
+const resultCard = document.getElementById("result-card");
+const resultTable = document.getElementById("result-table");
+const downloadBtn = document.getElementById("download-btn");
 
-    let latestData = []; 
+let latestData = [];
 
-    fileInput.addEventListener("change", () => {
-        fileName.textContent = fileInput.files.length
-            ? fileInput.files[0].name
-            : "No file selected";
-    });
+fileInput.addEventListener("change", () => {
+    fileName.textContent = fileInput.files.length
+        ? fileInput.files[0].name
+        : "No file selected";
+});
 
-    form.addEventListener("submit", async (e) => {
-        e.preventDefault();
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-        if (!fileInput.files.length) {
-            status.textContent = "Please upload a CSV file.";
+    if (!fileInput.files.length) {
+        status.textContent = "Please upload a CSV file.";
+        status.style.color = "red";
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("file", fileInput.files[0]);
+    formData.append("seats", document.getElementById("seat-limit").value);
+
+    status.textContent = "Processing...";
+    status.style.color = "#334155";
+
+    try {
+        const response = await fetch("/process", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            status.textContent = data.detail || "Error occurred";
             status.style.color = "red";
             return;
         }
 
-        const formData = new FormData();
-        formData.append("file", fileInput.files[0]);
-        formData.append("seats", document.getElementById("seat-limit").value);
+        status.textContent = "Allocation completed successfully.";
+        status.style.color = "green";
 
-        status.textContent = "Processing...";
-        status.style.color = "#334155";
+        latestData = data;
+        renderTable(data);
+    } catch {
+        status.textContent = "Server error.";
+        status.style.color = "red";
+    }
+});
 
-        try {
-            const response = await fetch("/process", {
-                method: "POST",
-                body: formData
-            });
+function renderTable(data) {
+    let html = "<table><thead><tr>";
 
-            const data = await response.json();
-
-            if (!response.ok) {
-                status.textContent = data.detail || "Error occurred";
-                status.style.color = "red";
-                return;
-            }
-
-            status.textContent = "Allocation completed successfully.";
-            status.style.color = "green";
-
-            latestData = data;          
-            renderTable(data);
-        } catch {
-            status.textContent = "Server error.";
-            status.style.color = "red";
-        }
+    Object.keys(data[0]).forEach(key => {
+        html += `<th>${key}</th>`;
     });
 
-    function renderTable(data) {
-        let html = "<table><thead><tr>";
+    html += "</tr></thead><tbody>";
 
-        Object.keys(data[0]).forEach(key => {
-            html += `<th>${key}</th>`;
+    data.forEach(row => {
+        html += "<tr>";
+        Object.values(row).forEach(val => {
+            html += `<td>${val ?? ""}</td>`;
         });
-
-        html += "</tr></thead><tbody>";
-
-        data.forEach(row => {
-            html += "<tr>";
-            Object.values(row).forEach(val => {
-                html += `<td>${val ?? ""}</td>`;
-            });
-            html += "</tr>";
-        });
-
-        html += "</tbody></table>";
-
-        resultTable.innerHTML = html;
-        resultCard.classList.remove("hidden");
-        downloadBtn.style.display = "inline-block";
-    }
-
-    downloadBtn.addEventListener("click", () => {
-        if (!latestData.length) return;
-
-        const csv = convertToCSV(latestData);
-        const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
-        const url = URL.createObjectURL(blob);
-
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = "allocated_minors.csv";
-        link.click();
-
-        URL.revokeObjectURL(url);
+        html += "</tr>";
     });
 
-    function convertToCSV(data) {
-        const headers = Object.keys(data[0]).join(",");
-        const rows = data.map(row =>
-            Object.values(row)
-                .map(val => `"${val ?? ""}"`)
-                .join(",")
-        );
+    html += "</tbody></table>";
 
-        return [headers, ...rows].join("\n");
-    }
+    resultTable.innerHTML = html;
+    resultCard.classList.remove("hidden");
+    downloadBtn.style.display = "inline-block";
+}
+
+downloadBtn.addEventListener("click", () => {
+    if (!latestData.length) return;
+
+    const csv = convertToCSV(latestData);
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "allocated_minors.csv";
+    link.click();
+
+    URL.revokeObjectURL(url);
+});
+
+function convertToCSV(data) {
+    const headers = Object.keys(data[0]).join(",");
+    const rows = data.map(row =>
+        Object.values(row)
+            .map(val => `"${val ?? ""}"`)
+            .join(",")
+    );
+
+    return [headers, ...rows].join("\n");
+}
 </script>
 </body>
 </html>
