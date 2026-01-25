@@ -30,7 +30,10 @@ async def process_csv(file: UploadFile = File(...),seats: int = Form(...)):
     }
 
     df = df.sort_values(by=["Backlog", "Percentage"],ascending=[True, False])
-    
+    df["Branch"] = df["Branch"].str.lower().str.strip().replace("entc", "e&tc")
+    df["Choice1"] = df["Choice1"].str.lower().str.strip().replace("entc", "e&tc")
+    df["Choice2"] = df["Choice2"].str.lower().str.strip().replace("entc", "e&tc")
+    df["Choice3"] = df["Choice3"].str.lower().str.strip().replace("entc", "e&tc")
     df["Minor"] = None
     minor_seats = { branch: {m: seats for m in minors} for branch, minors in minor.items()}
     for branch in df["Branch"].str.lower().unique():
