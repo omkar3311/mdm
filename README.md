@@ -5,6 +5,10 @@
 It is designed to be fast, fair, and easy to use—ideal for academic institutions or internal administrative workflows.
 
 ---
+You can access the deployed application here:
+
+🔗 https://minorflow.onrender.com/
+
 ## 📸 Preview
 
 ![MinorFlow UI](Minorflow.png)
